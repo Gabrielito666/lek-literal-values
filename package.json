@@ -1,0 +1,14 @@
+{
+  "name": "lek-literal-values",
+  "version": "1.0.0",
+  "description": "'package that stores values literally in .js files'",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "'Gabriel Farías'",
+  "license": "ISC",
+  "dependencies": {
+    "sqlite-express": "^3.0.5"
+  }
+}

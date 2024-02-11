@@ -2,15 +2,14 @@
 
 lek-literal-values is a package that receives values and makes them explicit in a winery.js file... the bodaga allows to store data in the most literal and silly way possible. This allows you to persist data when you change application lifecycle without complications. it is useful if you want to gaurd functions for example, or objects but not in json format.
 
-to use it first install it with npm lek-literal-values, then import it with require and run the function... it will return the set, get, remove and removeAll methods.
+to use it first install it with npm lek-literal-values, then import it with require... it is a object with set, get and remove methods.
 
 ```bash
 npm install lek-literal-values
 ```
 
 ```javascript
-const lekLiteralValues = require('lek-literal-values');
-const { set, get, remove, removeAll } = lekLiteralValues();
+const { set, get, remove } = require('lek-literal-values');
 ```
 
 ## set
@@ -20,8 +19,7 @@ to this method you can set a key in string format and a value as a second parame
 it is an asynchronous method, so before calling the data with get you must be sure to use await or then with set.
 
 ```javascript
-const lekLiteralValues = require('lek-literal-values');
-const { set, get, remove, removeAll } = lekLiteralValues();
+const { set, get, remove } = require('lek-literal-values');
 
 await set('my_string', 'my string');
 await set('my_number', 27);
@@ -29,8 +27,7 @@ await set('my_number', 27);
 or
 
 ```javascript
-const lekLiteralValues = require('lek-literal-values');
-const { set, get, remove, removeAll } = lekLiteralValues();
+const { set, get, remove } = require('lek-literal-values');
 
 await set({ my_string : 'my string', my_number : 27 });
 ```
@@ -38,8 +35,7 @@ await set({ my_string : 'my string', my_number : 27 });
 add functions, boolean objects and arrays freely. objects can have any value inside including functions, just be careful with circular references as they are not supported by the system. Objects will only store the properties of the object, not its proptotype.
 
 ```javascript
-const lekLiteralValues = require('lek-literal-values');
-const { set, get, remove, removeAll } = lekLiteralValues();
+const { set, get, remove } = require('lek-literal-values');
 
 const my_object = {
     run : () => { console.log("I'm so tired") },
@@ -77,8 +73,7 @@ this method receives a string with the key you want to fetch and returns it sync
 if you pass an array with strings as parameter the method will return an object with the requested keys. remember that if you don't use array it will return just the value, and with array it will return the value inside an object.
 
 ```javascript
-const lekLiteralValues = require('lek-literal-values');
-const { set, get, remove, removeAll } = lekLiteralValues();
+const { set, get, remove } = require('lek-literal-values');
 
 await set({ my_string : 'my string', my_number : 27, my_bool : true });
 
@@ -94,8 +89,7 @@ receives a key and removes it from the system, it is asynchronous so make sure i
 function the same as get but deleting.
 
 ```javascript
-const lekLiteralValues = require('lek-literal-values');
-const { set, get, remove, removeAll } = lekLiteralValues();
+const { set, get, remove } = require('lek-literal-values');
 
 await set({ my_string : 'my string', my_number : 27, my_bool : true });
 

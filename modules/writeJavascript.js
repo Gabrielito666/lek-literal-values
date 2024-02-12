@@ -45,7 +45,7 @@ const getObject = (thing, tabs) => {
     return `{\n${value.map(ch => getProp(ch, (tabs + 1))).join(',\n')}\n${tbs}}`;
 };
 
-getProp = (ch, tabs) => `${getTabs(tabs)}${ch.key} : ${formatValue(ch, tabs)}`;
+const getProp = (ch, tabs) => `${getTabs(tabs)}${ch.key} : ${formatValue(ch, tabs)}`;
 
 const getArray = (thing, tabs) => {
     const value = typeof thing.value === 'string' ? JSON.parse(thing.value) : thing.value;

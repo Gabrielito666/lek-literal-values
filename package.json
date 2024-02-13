@@ -1,6 +1,6 @@
 {
   "name": "lek-literal-values",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "'package that stores values literally in .js files'",
   "main": "index.js",
   "scripts": {
